@@ -186,7 +186,7 @@ const motor_measure_t *get_trigger_motor_measure_point(void)
 /**
   * @brief          return the M2006 motor data point (0x204-0x206)
   * @param[in]      i: motor number, range [0,2]
-  * @retval         motor data point
+  * @retval         motor data point test
   */
 const motor_measure_t *get_chassis_motor_measure_point(uint8_t i)
 {
