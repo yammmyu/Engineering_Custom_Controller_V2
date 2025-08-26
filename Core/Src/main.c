@@ -21,8 +21,6 @@
 #include "can.h"
 #include "usart.h"
 #include "gpio.h"
-#include "bsp_can.h"
-#include "CAN_receive.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -94,18 +92,16 @@ int main(void)
   MX_CAN2_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  can_filter_init();
+  	  can_filter_init();
   /* USER CODE END 2 */
 
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-	  CAN_cmd_gimbal(1000, 0, 0, 0); // Small current for slow spin
-	  HAL_Delay(2000);              // Spin for 2s
-	  CAN_cmd_gimbal(0, 0, 0, 0);   // Stop
-	  HAL_Delay(2000);              // Wait 2s
+      CAN_cmd_chassis(4000, 4000, 4000, 4000);
+      HAL_Delay(2);
+      CAN_cmd_gimbal(10000, 10000, 10000, 10000);
+      HAL_Delay(2);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

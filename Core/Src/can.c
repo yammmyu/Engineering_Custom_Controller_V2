@@ -19,7 +19,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "can.h"
-#include "CAN_receive.h"
 
 /* USER CODE BEGIN 0 */
 
